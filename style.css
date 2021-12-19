@@ -189,7 +189,6 @@ html,
       }
 
       .header-container {
-        background: url("/assets/header_squiggle.svg") no-repeat;
         background-position: 25% 50%;
         background-size: contain;
         padding: 1rem 0;
@@ -209,8 +208,7 @@ html,
         width: 100%;
         font-family: program-narrow, sans-serif;
         font-weight: 900;
-        font-size: 8.25rem;
-        text-transform: uppercase;
+          text-transform: uppercase;
         color: #0a2e36;
         line-height: 0.7;
         font-size: clamp(8.25rem, 24rem, 45vw);
@@ -278,7 +276,6 @@ html,
       .quote {
         display: flex;
         flex-direction: column;
-        background: url("/assets/quote_squiggle.svg") no-repeat;
         background-size: contain;
         background-position: 50%;
         align-items: center;
@@ -376,7 +373,6 @@ html,
         display: block;
         width: 1em;
         height: 1em;
-        background: url("/assets/icon_heart.svg") no-repeat;
         margin-right: 0.5em;
       }
 
@@ -416,7 +412,6 @@ html,
         display: block;
         width: 1em;
         height: 1em;
-        background: url("/assets/icon_download.svg") no-repeat;
         margin-right: 0.5em;
       }
 
