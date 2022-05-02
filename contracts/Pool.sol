@@ -108,11 +108,9 @@ contract Pool is Ownable {
     }
 
     constructor(address underlying) {
-        // todo: create 2 on xxx-HL
-        // require(lpToken != address(0) && underlying != address(0), "Invalid address");
-        // _lpToken = lpToken;
-        _underlying = underlying;
+        require(underlying != address(0), "Invalid address");
 
+        _underlying = underlying;
         _self = address(this);
 
         // TODO: MINT CONTRACT ON DEPLOYMENT
@@ -120,6 +118,12 @@ contract Pool is Ownable {
         // string symbol = IERC20(_underlying).symbol() + "-" + IERC20(underlying).symbol();
 
         // deploy ERC20 contract
+        bytes memory bytecode = type(UniswapV2Pair).creationCode;
+        bytes32 salt = keccak256(abi.encodePacked(token0, token1));
+        assembly {
+            pair := create2(0, add(bytecode, 32), mload(bytecode), salt)
+        }
+        // IUniswapV2Pair(pair).initialize(token0, token1);
     }
 
     // Add underlying tokens to the pool
